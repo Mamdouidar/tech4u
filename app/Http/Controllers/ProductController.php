@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Cart;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\Response as HttpFoundationResponse;
 
 class ProductController extends Controller
 {
@@ -38,5 +40,10 @@ class ProductController extends Controller
             'products' => $cart->items,
             'totalPrice' => $cart->totalPrice
         ]);
+    }
+
+    public function create()
+    {
+        return view('dashboard.create');
     }
 }

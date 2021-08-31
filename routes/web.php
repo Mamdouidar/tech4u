@@ -37,4 +37,4 @@ Route::post('/order', [OrderController::class, 'store']);
 Route::get('/login', [UserController::class, 'index']);
 Route::post('/login', [UserController::class, 'store']);
 
-Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/admin/dashboard/create', [ProductController::class, 'create'])->middleware('admin');
