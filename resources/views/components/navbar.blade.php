@@ -13,6 +13,9 @@
       </li>
     </ul>
   </div>
-  <span>Are you an Admin ?</span>
+  <div class="mx-5">
+    <a href="/cart" class="btn btn-transparent btn-outline-dark"><i class="fa fa-shopping-cart"></i> Cart <span class="badge badge-success text-danger">{{ session()->has('cart') ? session()->get('cart')->totalQty : ''}}</span></a>
+  </div>
+  <span class="ml-5">Are you an Admin ?</span>
   <a href="/login" class="btn btn-transparent btn-outline-dark my-2 mx-2 my-sm-0">Login</a>
 </nav>

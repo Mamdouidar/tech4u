@@ -12,7 +12,7 @@
             <li class="list-group-item bg-dark text-white">Amount: {{ $product->amount }}</li>
         </ul>
         <div class="card-body align-self-center">
-            <a href="#" class="card-link btn btn-outline-light">Add to Cart</a>
+            <a href="{{ route('product.addToCart', ['id' => $product->id ] )}}" class="card-link btn btn-outline-light">Add to Cart</a>
         </div>
     </div>
 </div>

@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\AdminController;
-use App\Models\Category;
-use App\Models\Product;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,27 +23,18 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/products', function () {
-    return view('products', [
-        'products' => Product::all()
-    ]);
-});
+Route::get('/products', [ProductController::class, 'index']);
 
-Route::get('/categories', function () {
-    return view('categories', [
-        'categories' => Category::all()
-    ]);
-});
+Route::get('/categories', [CategoryController::class, 'index']); 
+Route::get('/categories/{category:name}', [CategoryController::class, 'showProducts']);
 
-Route::get('/categories/{category:name}', function (Category $category) {
-    return view('products', [
-        'products' => $category->products
-    ]);
-});
+Route::get('/add-to-cart/{id}', [ProductController::class, 'getAddToCart'])->name('product.addToCart');
 
-Route::get('/cart', function () {
-    return view('cart');
-});
+Route::get('/cart', [ProductController::class, 'getCart']);
 
-Route::get('/login', [AdminController::class, 'index']);
-Route::post('/login', [AdminController::class, 'store']);
+Route::post('/order', [OrderController::class, 'store']);
+
+Route::get('/login', [UserController::class, 'index']);
+Route::post('/login', [UserController::class, 'store']);
+
+Route::get('/dashboard', [DashboardController::class, 'index']);
