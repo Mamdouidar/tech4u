@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
         $c3->src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80";
         $c3->save();
 
-        Product::factory(3)->create();
+        //Product::factory(3)->create();
         // \App\Models\User::factory(10)->create();
     }
 }
