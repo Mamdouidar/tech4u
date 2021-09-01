@@ -2,8 +2,14 @@
   <a class="navbar-brand mx-5" href="/">Tech4U</a>
   <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home</a>
+    <li class="nav-item">
+        <a class="nav-link" href="/dashboard">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/dashboard/create">Add Product</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/dashboard/read">View Products</a>
       </li>
     </ul>
   </div>

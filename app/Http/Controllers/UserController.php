@@ -21,7 +21,7 @@ class UserController extends Controller
         ]);
 
         if (Auth::attempt($attributes)) {
-            return redirect('admin/dashboard/create');
+            return redirect('/dashboard');
         }
     }
 }

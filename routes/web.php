@@ -37,4 +37,13 @@ Route::post('/order', [OrderController::class, 'store']);
 Route::get('/login', [UserController::class, 'index']);
 Route::post('/login', [UserController::class, 'store']);
 
-Route::get('/admin/dashboard/create', [ProductController::class, 'create'])->middleware('admin');
+Route::get('/dashboard', [ProductController::class, 'main'])->middleware('admin');
+Route::get('/dashboard/create', [ProductController::class, 'create'])->middleware('admin');
+Route::get('/dashboard/read', [ProductController::class, 'read'])->middleware('admin');
+
+
+Route::get('/dashboard/update/{product}', [ProductController::class, 'edit'])->middleware('admin');
+
+Route::post('/admin', [ProductController::class, 'store'])->middleware('admin');
+Route::patch('/admin/{product}', [ProductController::class, 'update'])->middleware('admin');
+Route::delete('/admin/{product}', [ProductController::class, 'destroy'])->middleware('admin');
